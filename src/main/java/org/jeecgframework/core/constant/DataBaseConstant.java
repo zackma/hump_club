@@ -136,6 +136,14 @@ public interface DataBaseConstant {
 	 * 业务流程状态
 	 */
 	public static final String BPM_STATUS_TABLE = "bpm_status";
+	/**
+	 * 逻辑删除状态
+	 */
+	public static final String DELETE_STATE = "isDelete";
+	/**
+	 * 逻辑删除状态
+	 */
+	public static final String DELETE_STATE_TABLE = "is_delete";
 	//*********系统建表标准字段****************************************
 	//****************************************************************************************
 }

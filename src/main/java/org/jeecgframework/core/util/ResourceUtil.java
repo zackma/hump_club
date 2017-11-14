@@ -10,6 +10,7 @@ import java.util.Set;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import com.hump.publicenum.PublicConstant;
 import org.apache.commons.lang.StringUtils;
 import org.jeecgframework.core.constant.DataBaseConstant;
 import org.jeecgframework.web.system.manager.ClientManager;
@@ -252,6 +253,11 @@ public class ResourceUtil {
 			key = key;
 		}
 
+		// 删除标识
+		if (key.equals(DataBaseConstant.DELETE_STATE)
+				|| key.equals(DataBaseConstant.DELETE_STATE_TABLE)) {
+			returnValue = PublicConstant.DELETE_N.getCode();
+		}
 	
 		//替换为系统的登录用户账号
 //		if (key.equals(DataBaseConstant.CREATE_BY)
