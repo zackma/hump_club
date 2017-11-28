@@ -121,6 +121,12 @@ public class AuthInterceptor implements HandlerInterceptor {
 		if (requestPath.length()>3&&"api/".equals(requestPath.substring(0,4))) {
 			return true;
 		}
+		if (requestPath.length()>3&& requestPath.startsWith("rest/")) {
+			return true;
+		}
+		if (requestPath.startsWith("websocket/") || requestPath.startsWith("sockjs/")) {
+			return true;
+		}
 		//update-begin--Author:end  Date:20170402 for：对外接口改造 api 设置为默认对外路径不用进行登陆验证
 		if (excludeUrls.contains(requestPath)) {
 			return true;
