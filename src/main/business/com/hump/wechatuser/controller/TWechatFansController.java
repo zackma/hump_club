@@ -83,7 +83,7 @@ public class TWechatFansController extends BaseController {
 	 */
 	@RequestMapping(params = "list")
 	public ModelAndView list(HttpServletRequest request) {
-		return new ModelAndView("com/jeecg/com.hump.wechatuser/tWechatFansList");
+		return new ModelAndView("hump/wechatuser/tWechatFansList");
 	}
 
 	/**
@@ -225,7 +225,7 @@ public class TWechatFansController extends BaseController {
 			tWechatFans = tWechatFansService.getEntity(TWechatFansEntity.class, tWechatFans.getOpenid());
 			req.setAttribute("tWechatFansPage", tWechatFans);
 		}
-		return new ModelAndView("com/jeecg/com.hump.wechatuser/tWechatFans-add");
+		return new ModelAndView("hump/wechatuser/tWechatFans-add");
 	}
 	/**
 	 * t_wechat_fans编辑页面跳转
@@ -238,7 +238,7 @@ public class TWechatFansController extends BaseController {
 			tWechatFans = tWechatFansService.getEntity(TWechatFansEntity.class, tWechatFans.getOpenid());
 			req.setAttribute("tWechatFansPage", tWechatFans);
 		}
-		return new ModelAndView("com/jeecg/com.hump.wechatuser/tWechatFans-update");
+		return new ModelAndView("hump/wechatuser/tWechatFans-update");
 	}
 	
 	/**
