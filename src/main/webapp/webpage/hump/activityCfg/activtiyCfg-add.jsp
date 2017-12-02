@@ -185,3 +185,8 @@
 		</t:formvalid>
  </body>
   <script src = "webpage/hump/activityCfg/activtiyCfg.js"></script>
+ <script type="text/javascript"  charset="utf-8" src="plug-in/ueditor/ueditor.config.js"></script>
+ <script type="text/javascript"  charset="utf-8" src="plug-in/ueditor/ueditor.all.min.js"></script>
+ <script type="text/javascript">
+     var editor = UE.getEditor('actDetail');
+ </script>
