@@ -79,7 +79,7 @@
 							<label class="Validform_label" style="display: none;">活动报名结束日期</label>
 						</td>
 					</tr>
-				<tr>
+				<%--<tr>
 					<td align="right">
 						<label class="Validform_label">
 							活动备注:
@@ -100,8 +100,8 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">活动标签（预留）</label>
 						</td>
-					</tr>
-				<tr>
+					</tr>--%>
+				<%--<tr>
 					<td align="right">
 						<label class="Validform_label">
 							当前状态：1已发布，0未发布:
@@ -166,9 +166,18 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">逻辑删除</label>
 						</td>
-					</tr>
-				
-				
+					</tr>--%>
+
+				<tr>
+					<td align="right">
+						<label class="Validform_label">
+							活动备注:
+						</label>
+					</td>
+					<td class="value"  colspan="3" >
+						<textarea style="width:600px;" class="inputxt" rows="5" name="remark"   ignore="checked" ></textarea>
+					</td>
+				</tr>
 				<tr>
 					<td align="right">
 						<label class="Validform_label">
