@@ -64,6 +64,14 @@ public interface DataBaseConstant {
 	//****************************************************************************************
 	//*********系统建表标准字段****************************************
 	/**
+	 * 创建者ID
+	 */
+	public static final String CREATE_ID_TABLE = "create_id";
+	/**
+	 * 创建者ID
+	 */
+	public static final String CREATE_ID = "createId";
+	/**
 	 * 创建者登录名称
 	 */
 	public static final String CREATE_BY_TABLE = "create_by";
