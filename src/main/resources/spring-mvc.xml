@@ -102,6 +102,11 @@
 			<mvc:mapping path="/api/**" />
 			<bean class="org.jeecgframework.core.interceptors.SignInterceptor" />
 		</mvc:interceptor>
+		<!--token 拦截器-->
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<bean class="org.jeecgframework.core.interceptors.ApiInterceptor"/>
+		</mvc:interceptor>
 		<!--add-end-dangzhenghui  20170402 for 添加 api延签拦截器 对签名统处理-->
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
