@@ -96,7 +96,7 @@ public class ActivtiyCfgController extends BaseController {
 	 * @param request
 	 * @param response
 	 * @param dataGrid
-	 * @param user
+	 * @param activtiyCfg
 	 */
 
 	@RequestMapping(params = "datagrid")
@@ -170,7 +170,7 @@ public class ActivtiyCfgController extends BaseController {
 	/**
 	 * 添加t_activtiy_cfg
 	 * 
-	 * @param ids
+	 * @param activtiyCfg
 	 * @return
 	 */
 	@RequestMapping(params = "doAdd")
@@ -180,9 +180,9 @@ public class ActivtiyCfgController extends BaseController {
 		AjaxJson j = new AjaxJson();
 		message = "t_activtiy_cfg添加成功";
 		try{
-			Date now =new Date();
-			activtiyCfg.setCreateTime(now);
 			//activtiyCfg.setCreateId(ResourceUtil.getSessionUser(g).getId());
+			//默认已发布
+			activtiyCfg.setPubStatus(1);
 			activtiyCfgService.save(activtiyCfg);
 			systemService.addLog(message, Globals.Log_Type_INSERT, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
@@ -197,7 +197,7 @@ public class ActivtiyCfgController extends BaseController {
 	/**
 	 * 更新t_activtiy_cfg
 	 * 
-	 * @param ids
+	 * @param activtiyCfg
 	 * @return
 	 */
 	@RequestMapping(params = "doUpdate")
