@@ -262,7 +262,7 @@ public class ResourceUtil {
 		//创建人ID  modified by zackma 20171206
 		if (key.equals(DataBaseConstant.CREATE_ID)
 				|| key.equals(DataBaseConstant.CREATE_ID_TABLE)) {
-			returnValue = getSessionUser().getCreateBy();
+			returnValue = getSessionUser().getId();
 		}
 	
 		//替换为系统的登录用户账号
@@ -308,6 +308,10 @@ public class ResourceUtil {
 		//流程状态默认值（默认未发起）
 		if (key.equals(DataBaseConstant.BPM_STATUS_TABLE)|| key.equals(DataBaseConstant.BPM_STATUS_TABLE)) {
 			returnValue = "1";
+		}
+		//替换为当前用户的ID
+		if (key.equals(DataBaseConstant.UPDATE_ID_TABLE)|| key.equals(DataBaseConstant.UPDATE_ID)) {
+			returnValue = getSessionUser().getId();
 		}
 		if(returnValue!=null){returnValue = returnValue + moshi;}
 		return returnValue;

@@ -152,6 +152,16 @@ public interface DataBaseConstant {
 	 * 逻辑删除状态
 	 */
 	public static final String DELETE_STATE_TABLE = "is_delete";
+	//20171208，添加新字段
+	/**
+	 * 修改人ID
+	 */
+	public static final String UPDATE_ID_TABLE = "update_id";
+	/**
+	 * 修改人ID
+	 */
+	public static final String UPDATE_ID = "updateId";
+
 	//*********系统建表标准字段****************************************
 	//****************************************************************************************
 }

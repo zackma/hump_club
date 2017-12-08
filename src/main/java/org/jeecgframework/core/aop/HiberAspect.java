@@ -103,6 +103,17 @@ public boolean onSave(Object entity, Serializable id, Object[] state,
 		    	 }
 		         continue;
 		     }
+			 //20171208,添加一些需要在save的时候插入的值
+			 /*找到名为"创建人ID"的属性*/
+			 else if (DataBaseConstant.CREATE_ID.equals(propertyNames[index])
+					 ||DataBaseConstant.CREATE_ID_TABLE.equals(propertyNames[index]))
+			 {
+		         /*使用拦截器将对象的"创建人ID"属性赋上值*/
+				 if(oConvertUtils.isEmpty(state[index])){
+					 state[index] = ResourceUtil.getUserSystemData(DataBaseConstant.CREATE_ID);
+				 }
+				 continue;
+			 }
 		 }
 	} catch (RuntimeException e) {
 		e.printStackTrace();
@@ -148,6 +159,15 @@ public boolean onFlushDirty(Object entity, Serializable id,
         	 currentState[index] = ResourceUtil.getUserSystemData(DataBaseConstant.SYS_USER_NAME);
         	 continue;
          }
+		 //20171208,添加一些需要在update的时候插入的值
+		 /*找到名为"修改人ID"的属性*/
+		 else if (DataBaseConstant.UPDATE_ID.equals(propertyNames[index])
+					 ||DataBaseConstant.UPDATE_ID_TABLE.equals(propertyNames[index]))
+		 {
+             /*使用拦截器将对象的"修改人ID"属性赋上值*/
+			 currentState[index] = ResourceUtil.getUserSystemData(DataBaseConstant.UPDATE_ID);
+			 continue;
+		 }
      }
 	 return true;
 }
