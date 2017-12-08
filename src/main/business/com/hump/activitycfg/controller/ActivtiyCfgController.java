@@ -1,8 +1,8 @@
 package com.hump.activitycfg.controller;
 import com.hump.activitycfg.entity.ActivtiyCfgEntity;
 import com.hump.activitycfg.service.ActivtiyCfgServiceI;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.*;
 import java.text.SimpleDateFormat;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -35,8 +35,6 @@ import java.io.IOException;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
-import java.util.Map;
-import java.util.HashMap;
 import org.jeecgframework.core.util.ExceptionUtil;
 
 import org.springframework.http.ResponseEntity;
@@ -50,7 +48,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.jeecgframework.core.beanvalidator.BeanValidators;
-import java.util.Set;
+
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 import java.net.URI;
@@ -182,6 +180,9 @@ public class ActivtiyCfgController extends BaseController {
 		AjaxJson j = new AjaxJson();
 		message = "t_activtiy_cfg添加成功";
 		try{
+			Date now =new Date();
+			activtiyCfg.setCreateTime(now);
+			//activtiyCfg.setCreateId(ResourceUtil.getSessionUser(g).getId());
 			activtiyCfgService.save(activtiyCfg);
 			systemService.addLog(message, Globals.Log_Type_INSERT, Globals.Log_Leavel_INFO);
 		}catch(Exception e){

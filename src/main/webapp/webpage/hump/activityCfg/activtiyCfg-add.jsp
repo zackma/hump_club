@@ -167,7 +167,32 @@
 							<label class="Validform_label" style="display: none;">逻辑删除</label>
 						</td>
 					</tr>--%>
-
+				<tr>
+					<td align="right">
+						<label class="Validform_label">
+							选择标签:
+						</label>
+					</td>
+					<td class="value" nowrap>
+						<input id="roleid2" name="roleid2" type="hidden" value="${id}"/>
+						<input name="roleName2" id="roleName2" class="inputxt" value="${roleName }" readonly="readonly" datatype="*" />
+						<t:choose hiddenName="roleid2" hiddenid="id2" textname="roleName2" url="userController.do?roles" name="roleList2" icon="icon-search" title="common.role.list" isclear="true" isInit="true"></t:choose>
+						<span class="Validform_checktip">标签可多选</span>
+					</td>
+				</tr>
+				<tr>
+					<td align="right">
+						<label class="Validform_label">
+							选择领队:
+						</label>
+					</td>
+					<td class="value" nowrap>
+						<input id="roleid" name="roleid" type="hidden" value="${id}"/>
+						<input name="roleName" id="roleName" class="inputxt" value="${roleName }" readonly="readonly" datatype="*" />
+						<t:choose hiddenName="roleid" hiddenid="id" textname="roleName" url="userController.do?roles" name="roleList" icon="icon-search" title="common.role.list" isclear="true" isInit="true"></t:choose>
+						<span class="Validform_checktip">选择领队</span>
+					</td>
+				</tr>
 				<tr>
 					<td align="right">
 						<label class="Validform_label">
