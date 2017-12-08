@@ -175,7 +175,7 @@
 					</td>
 					<td class="value" nowrap>
 						<input id="roleid2" name="roleid2" type="hidden" value="${id}"/>
-						<input name="roleName2" id="roleName2" class="inputxt" value="${roleName }" readonly="readonly" datatype="*" />
+						<input name="roleName2" id="roleName2" class="inputxt" value="${roleName }" readonly="readonly"  />
 						<t:choose hiddenName="roleid2" hiddenid="id2" textname="roleName2" url="userController.do?roles" name="roleList2" icon="icon-search" title="common.role.list" isclear="true" isInit="true"></t:choose>
 						<span class="Validform_checktip">标签可多选</span>
 					</td>
@@ -188,7 +188,7 @@
 					</td>
 					<td class="value" nowrap>
 						<input id="roleid" name="roleid" type="hidden" value="${id}"/>
-						<input name="roleName" id="roleName" class="inputxt" value="${roleName }" readonly="readonly" datatype="*" />
+						<input name="roleName" id="roleName" class="inputxt" value="${roleName }" readonly="readonly"  />
 						<t:choose hiddenName="roleid" hiddenid="id" textname="roleName" url="userController.do?roles" name="roleList" icon="icon-search" title="common.role.list" isclear="true" isInit="true"></t:choose>
 						<span class="Validform_checktip">选择领队</span>
 					</td>
