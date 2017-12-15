@@ -67,20 +67,26 @@ public class TWechatFansEntity implements java.io.Serializable {
 	@Excel(name="生日",width=15)
 	private String birthday;
 	/**性别*/
-	@Excel(name="性别",width=15)
-	private String sex;
+	@Excel(name="性别",width=4)
+	private Integer sex;
 	/**职业*/
 	@Excel(name="职业",width=15)
 	private String career;
 	/**关注时间*/
 	@Excel(name="关注时间",width=15,format = "yyyy-MM-dd")
-	private Date joinTime;
+	private Date subscribeTime;
 	/**角色编码*/
 	@Excel(name="角色编码",width=15)
 	private String roleCode;
 	/**活动标签（预留）*/
 	@Excel(name="活动标签（预留）",width=15)
 	private String actTag;
+	@Excel(name="语言",width = 15)
+	private String language;
+	@Excel(name="备注",width = 15)
+	private String remark;
+	private Integer groupId;
+	private Integer subscribe;
 	
 	/**
 	 *方法: 取得java.lang.String
@@ -294,8 +300,8 @@ public class TWechatFansEntity implements java.io.Serializable {
 	 *@return: java.lang.String  性别
 	 */
 
-	@Column(name ="SEX",nullable=true,length=1)
-	public String getSex(){
+	@Column(name ="SEX",nullable=true,length=4)
+	public Integer getSex(){
 		return this.sex;
 	}
 
@@ -303,7 +309,7 @@ public class TWechatFansEntity implements java.io.Serializable {
 	 *方法: 设置java.lang.String
 	 *@param: java.lang.String  性别
 	 */
-	public void setSex(String sex){
+	public void setSex(Integer sex){
 		this.sex = sex;
 	}
 	/**
@@ -323,23 +329,22 @@ public class TWechatFansEntity implements java.io.Serializable {
 	public void setCareer(String career){
 		this.career = career;
 	}
+
 	/**
 	 *方法: 取得java.util.Date
 	 *@return: java.util.Date  关注时间
 	 */
 
-	@Column(name ="JOIN_TIME",nullable=false)
-	public Date getJoinTime(){
-		return this.joinTime;
+	@Column(name ="SUBSCRIBE_TIME",nullable=false)
+	public Date getSubscribeTime() {
+		return subscribeTime;
 	}
 
-	/**
-	 *方法: 设置java.util.Date
-	 *@param: java.util.Date  关注时间
-	 */
-	public void setJoinTime(Date joinTime){
-		this.joinTime = joinTime;
+	public void setSubscribeTime(Date subscribeTime) {
+		this.subscribeTime = subscribeTime;
 	}
+
+
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  角色编码
@@ -373,5 +378,41 @@ public class TWechatFansEntity implements java.io.Serializable {
 	 */
 	public void setActTag(String actTag){
 		this.actTag = actTag;
+	}
+
+	@Column(name ="LANGUAGE",nullable=true,length=10)
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+
+	@Column(name ="REMARK",nullable=true,length=255)
+	public String getRemark() {
+		return remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+
+	@Column(name ="GROUP_ID",nullable=true,length=4)
+	public Integer getGroupId() {
+		return groupId;
+	}
+
+	public void setGroupId(Integer groupId) {
+		this.groupId = groupId;
+	}
+
+	@Column(name ="SUBSCRIBE",nullable=true,length=4)
+	public Integer getSubscribe() {
+		return subscribe;
+	}
+
+	public void setSubscribe(Integer subscribe) {
+		this.subscribe = subscribe;
 	}
 }

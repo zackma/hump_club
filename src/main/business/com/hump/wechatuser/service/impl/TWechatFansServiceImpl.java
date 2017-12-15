@@ -90,9 +90,13 @@ public class TWechatFansServiceImpl extends CommonServiceImpl implements TWechat
 		map.put("birthday", t.getBirthday());
 		map.put("sex", t.getSex());
 		map.put("career", t.getCareer());
-		map.put("join_time", t.getJoinTime());
+		map.put("join_time", t.getSubscribeTime());
 		map.put("role_code", t.getRoleCode());
 		map.put("act_tag", t.getActTag());
+		map.put("language", t.getLanguage());
+		map.put("remark", t.getRemark());
+		map.put("group_id", t.getGroupId());
+		map.put("subscribe", t.getSubscribe());
 		return map;
 	}
  	
@@ -117,9 +121,13 @@ public class TWechatFansServiceImpl extends CommonServiceImpl implements TWechat
  		sql  = sql.replace("#{birthday}",String.valueOf(t.getBirthday()));
  		sql  = sql.replace("#{sex}",String.valueOf(t.getSex()));
  		sql  = sql.replace("#{career}",String.valueOf(t.getCareer()));
- 		sql  = sql.replace("#{join_time}",String.valueOf(t.getJoinTime()));
+ 		sql  = sql.replace("#{join_time}",String.valueOf(t.getSubscribeTime()));
  		sql  = sql.replace("#{role_code}",String.valueOf(t.getRoleCode()));
  		sql  = sql.replace("#{act_tag}",String.valueOf(t.getActTag()));
+		sql  = sql.replace("#{language}",String.valueOf(t.getLanguage()));
+		sql  = sql.replace("#{remark}",String.valueOf(t.getRemark()));
+		sql  = sql.replace("#{group_id}",String.valueOf(t.getGroupId()));
+		sql  = sql.replace("#{subscribe}",String.valueOf(t.getSubscribe()));
  		sql  = sql.replace("#{UUID}",UUID.randomUUID().toString());
  		return sql;
  	}

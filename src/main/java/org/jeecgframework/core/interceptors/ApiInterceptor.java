@@ -19,7 +19,7 @@ public class ApiInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object object) throws Exception {
         String requestPath = ResourceUtil.getRequestPath(request);
-        if (requestPath.length()>3&& requestPath.startsWith("rest/")&&!requestPath.contains("login")) {
+        if (requestPath.length()>3&& requestPath.startsWith("rest/")&&!requestPath.contains("wxFans")) {
             String token = request.getHeader("token");
             String openid = request.getParameter("openid");
             // token is not needed when debug

@@ -92,7 +92,7 @@ public class TWechatFansController extends BaseController {
 	 * @param request
 	 * @param response
 	 * @param dataGrid
-	 * @param user
+	 * @param tWechatFans
 	 */
 
 	@RequestMapping(params = "datagrid")
@@ -166,7 +166,7 @@ public class TWechatFansController extends BaseController {
 	/**
 	 * 添加t_wechat_fans
 	 * 
-	 * @param ids
+	 * @param tWechatFans
 	 * @return
 	 */
 	@RequestMapping(params = "doAdd")
@@ -190,7 +190,7 @@ public class TWechatFansController extends BaseController {
 	/**
 	 * 更新t_wechat_fans
 	 * 
-	 * @param ids
+	 * @param tWechatFans
 	 * @return
 	 */
 	@RequestMapping(params = "doUpdate")
