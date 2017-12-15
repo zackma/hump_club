@@ -87,7 +87,7 @@ public class TWechatFansEntity implements java.io.Serializable {
 	private String remark;
 	private Integer groupId;
 	private Integer subscribe;
-	
+
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  openid

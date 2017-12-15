@@ -63,7 +63,7 @@ public class TWechatFansServiceImpl extends CommonServiceImpl implements TWechat
  	}
  	/**
 	 * 删除操作增强业务
-	 * @param id
+	 * @param t
 	 * @return
 	 */
 	private void doDelBus(TWechatFansEntity t) throws Exception{
